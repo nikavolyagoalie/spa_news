@@ -5,6 +5,7 @@ import News from "./pages/News";
 import Error404 from "./pages/Error404";
 import LoginPage from "./pages/LoginPage";
 import { Routes, Route } from "react-router-dom";
+import AddNews from "./components/AddNews";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path='/' element={<MainLayout/>}>
         <Route index element={<Home/>}/>
         <Route path='news' element={<News/>}/>
+        <Route path='news/add' element={<AddNews/>}/>
         <Route path="login" element={<LoginPage/>}/>
         <Route path="*" element={<Error404 />} />
       </Route>
