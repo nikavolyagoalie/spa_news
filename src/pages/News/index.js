@@ -1,4 +1,3 @@
-// import NewsList from "../../components/NewsList"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from 'hooks/use-auth'
 import SearchNews from "../../components/SearchNews"
@@ -18,7 +17,6 @@ const News = () => {
                     (email === 'admin@admin.com' || email === 'user@user.com') && <button onClick={() => navigate('/news/add')}>Добавить новость</button>
                 }
             </div>
-            {/* <NewsList/> */}
         </>
     )
 }

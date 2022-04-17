@@ -10,11 +10,11 @@ import '../Login/styles.css'
 const Login = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const [isAuth, setIsAuth] = useState(false)
-    let unsuccess = isAuth
+    const [isAuth, setIsAuth] = useState(true)
 
     const handleLogin = (email, password) => {
         const auth = getAuth();
+
         signInWithEmailAndPassword (auth, email, password)
             .then(({user}) => {
                 console.log(user)
@@ -28,16 +28,16 @@ const Login = () => {
             })
             .catch(
                 console.error,
-                unsuccess = setIsAuth(true)
+                setTimeout(() => {setIsAuth(false)}, 3000)
             )
     }
 
     return (
         <div className="popup">
             <Form
-                title='sign in'
+                title='Вход'
                 handleClick={handleLogin}
-                isAuth={unsuccess}
+                isAuth={isAuth}
             />
         </div>
     )

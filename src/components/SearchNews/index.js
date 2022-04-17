@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useSelector } from 'react-redux'
 import NewsItem from "components/NewsItem"
 
@@ -23,9 +23,6 @@ const SearchNews = () => {
                     onChange={handleFindNews}
                     placeholder="Поиск новости..."
                 />
-                <button type="submit">
-                    Найти
-                </button>
             </form>
             <div className="news__sorted">
                 {

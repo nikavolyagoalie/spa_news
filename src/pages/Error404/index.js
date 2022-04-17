@@ -5,9 +5,9 @@ const Error404 = () => {
     return (
         <>
             <div>
-                <h2>Nothing to see here!</h2>
+                <h2>Такой страницы не существует</h2>
                 <p>
-                    <Link to="/">Go to the home page of the app</Link>
+                    <Link to="/">На главную</Link>
                 </p>
             </div>
         </>
