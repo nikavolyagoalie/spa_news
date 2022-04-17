@@ -33,7 +33,7 @@ export const newsSlice = createSlice({
     reducers: {
         addNewsItem: (state, action) => {
             const newsItem = {
-                id: Date.now,
+                id: Date.now(),
                 header: action.payload.header,
                 text: action.payload.text,
                 date: action.payload.date,

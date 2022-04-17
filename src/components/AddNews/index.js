@@ -50,6 +50,9 @@ const AddNews = () => {
                     Добавить
                 </button>
             </form>
+            <div className="back" onClick={() => navigate('/news')}>
+                Назад
+            </div>
         </div>
     )
 }

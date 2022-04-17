@@ -1,29 +1,23 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useSelector } from 'react-redux'
-import NewsItem from "../NewsItem"
+import NewsItem from "components/NewsItem"
 
 const SearchNews = () => {
     const [findNewsElem, setFindNewsElem] = useState('')
+
     const news = useSelector(state => state.news)
-    let [finded, setFinded] = useState(news);
+    
     const handleFindNews = (e) => {
         setFindNewsElem(e.target.value)
     }
 
-    const findNews = (e) => {
-        e.preventDefault()
-
-        if (findNewsElem === '') {
-            setFinded([])
-        } else {
-            let find = news.filter(item => item.header.includes(findNewsElem))
-            setFinded(find)
-        }
-    }
+    const filteredNews = news.filter(newsItem => {
+        return newsItem.header.toLowerCase().includes(findNewsElem.toLowerCase())
+    })
 
     return (
         <>
-            <form onSubmit={findNews}>
+            <form> 
                 <input
                     value={findNewsElem}
                     onChange={handleFindNews}
@@ -35,7 +29,7 @@ const SearchNews = () => {
             </form>
             <div className="news__sorted">
                 {
-                    finded && finded.map(item => (
+                    filteredNews.map(item => (
                         <NewsItem 
                             key={item.id} 
                             id={item.id}
