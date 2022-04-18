@@ -5,8 +5,6 @@ import { setUser } from 'store/slices/userSlice'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-import '../Login/styles.css'
-
 const Login = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()

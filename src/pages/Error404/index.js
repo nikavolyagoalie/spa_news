@@ -4,11 +4,11 @@ const Error404 = () => {
 
     return (
         <>
-            <div>
+            <div className="error404">
                 <h2>Такой страницы не существует</h2>
-                <p>
+                <button className="error404__button button">
                     <Link to="/">На главную</Link>
-                </p>
+                </button>
             </div>
         </>
     )

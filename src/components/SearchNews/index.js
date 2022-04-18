@@ -22,6 +22,7 @@ const SearchNews = () => {
                     value={findNewsElem}
                     onChange={handleFindNews}
                     placeholder="Поиск новости..."
+                    className="input"
                 />
             </form>
             <div className="news__sorted">

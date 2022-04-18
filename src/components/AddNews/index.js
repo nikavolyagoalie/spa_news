@@ -35,23 +35,29 @@ const AddNews = () => {
 
     return (
         <div className="add_news">
-            <form onSubmit={addNews}>
-                <input
-                    type="text"
-                    value={header}
-                    onChange={handlerHeader}
-                />
-                <textarea
-                    type="text"
-                    value={text}
-                    onChange={handlerText}
-                />
-                <button type="submit">
-                    Добавить
-                </button>
-            </form>
-            <div className="back" onClick={() => navigate('/news')}>
-                Назад
+            <button className="add_news__back button button__back" onClick={() => navigate('/news')}>
+                <span>Назад</span>
+            </button>
+            <div className="area">
+                <form onSubmit={addNews}>
+                    <input
+                        type="text"
+                        value={header}
+                        onChange={handlerHeader}
+                        placeholder="Заголовок новости"
+                        className="input"
+                    />
+                    <textarea
+                        type="text"
+                        value={text}
+                        onChange={handlerText}
+                        placeholder="Текст новости"
+                        className="textarea"
+                    />
+                    <button type="submit" className="button">
+                        <span>Добавить</span>
+                    </button>
+                </form>
             </div>
         </div>
     )

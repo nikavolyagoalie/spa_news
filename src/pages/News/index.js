@@ -8,14 +8,16 @@ const News = () => {
 
     return (
         <>
-            <h2>News</h2>
-            <div className="news__find">
-                <SearchNews/>
-            </div>
-            <div className="button__addNews">
-                {
-                    (email === 'admin@admin.com' || email === 'user@user.com') && <button onClick={() => navigate('/news/add')}>Добавить новость</button>
-                }
+            <h2>Новости</h2>
+            <div className="news area">
+                <div className="news__add">
+                    {
+                        (email === 'admin@admin.com' || email === 'user@user.com') && <button className="news__add-button button" onClick={() => navigate('/news/add')}>Добавить новость</button>
+                    }
+                </div>
+                <div className="news__search">
+                    <SearchNews/>
+                </div>
             </div>
         </>
     )
