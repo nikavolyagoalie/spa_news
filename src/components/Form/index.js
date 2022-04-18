@@ -52,9 +52,9 @@ const Form = ({ title, handleClick, isAuth }) => {
                     {title}
                 </button>
             </div>
-            <div className={!active ? "form__error hide" : "form__error"}>
+            <div className={isAuth ? "form__error hide" : "form__error"}>
                 {
-                    isAuth === false ? 'Email или пароль введены неверно' : <Spin />
+                    isAuth === false ? 'Email или пароль введены неверно' : <Spin /> 
                 }
             </div>
         </div>
