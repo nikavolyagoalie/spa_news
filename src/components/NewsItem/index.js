@@ -27,7 +27,7 @@ const NewsItem = ({id, header, date, text, approve}) => {
                                 <Checkbox
                                     icon={<Icon.FiCheck color="#ffb82d" size={14} />}
                                     name="my-input"
-                                    checked={true}
+                                    checked={approve}
                                     onChange={handleClickApprove}
                                     borderColor="#ffb82d"
                                     style={{ cursor: "pointer" }}
